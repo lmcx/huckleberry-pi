@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: huckleberry-pi
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: blue-build distribution for Raspberry Pi
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: quay.io/fedora/fedora-bootc
+image-version: 44 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -25,6 +25,7 @@ modules:
       packages:
         - micro
         - starship
+        - distrobox
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
